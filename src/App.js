@@ -11,7 +11,7 @@ import Logout from "./Logout";
 import SignUp from "./SignUp";
 import Profile from "./Profile";
 import Home from "./Home";
-import PrivateRoute from "./PrivateRoute";
+
 import { AuthProvider } from "./AuthContext";
 export default function App() {
   const isAuth = false
