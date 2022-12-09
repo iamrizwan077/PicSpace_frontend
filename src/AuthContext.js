@@ -31,7 +31,7 @@ export const AuthProvider = ({children}) => {
         console.log("FOrm")
         await axios({
             method:"post",
-            url:"iamrizwan.pythonanywhere.com/api/token/obtain/",
+            url:"https://iamrizwan.pythonanywhere.com/api/token/obtain/",
             headers: {
             //    'Authorization': "JWT "+ localStorage.getItem('access_token'),
                 'Content-Type': 'application/json',
@@ -158,7 +158,7 @@ const updateToken = async() => {
     console.log("Update token called")
     await axios({
         method:"post",
-        url:"iamrizwan077.pythonanywhere.com/api/token/refresh/",
+        url:"https://iamrizwan077.pythonanywhere.com/api/token/refresh/",
         headers: {
             'Authorization': "JWT "+ localStorage.getItem('access_token'),
             'Content-Type': 'application/json',
@@ -226,7 +226,7 @@ const updateToken = async() => {
         console.log("sing FOrm")
         await axios({
             method:"post",
-            url:"iamrizwan.pythonanywhere.com/api/user/create/",
+            url:"https://iamrizwan.pythonanywhere.com/api/user/create/",
             headers: {
             //    'Authorization': "JWT "+ localStorage.getItem('access_token'),
                 'Content-Type': 'application/json',
