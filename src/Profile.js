@@ -10,7 +10,7 @@ const Profile = () => {
   const handleProfile = async () =>{
     await axios({
      method: "get",
-     url: "iamrizwan.pythonanywhere.com/api/profile/",
+     url: "https://iamrizwan.pythonanywhere.com/api/profile/",
      headers: {
        "content-type": "application/json",
        'Authorization': "JWT "+ String(authToken.access),
