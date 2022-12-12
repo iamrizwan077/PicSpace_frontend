@@ -34,7 +34,7 @@ const Home = () => {
     event.preventDefault();
     const img = URL.createObjectURL(file);
     //  console.log(img);
-    const url = "iamrizwan.pythonanywhere.com/api/home";
+    const url = "https://iamrizwan.pythonanywhere.com/api/home";
     //   const data ={
     //    'name': file.name,
     //  'image': img
