@@ -213,7 +213,7 @@ const Gallery = () => {
             
       {modal && <Lightbox
         imageTitle={gallery[modaldata].name}
-        mainSrc={`http://localhost:8000${gallery[modaldata].image}`}
+        mainSrc={`https://iamrizwan.pythonanywhere.com${gallery[modaldata].image}`}
         onCloseRequest={() => setModal(false)}
       />
       }
