@@ -41,7 +41,7 @@ const Gallery = () => {
   const handleGallery = async () =>{
      await axios({
       method: "get",
-      url: "iamrizwan.pythonanywhere.com/api/gallery/",
+      url: "https://iamrizwan.pythonanywhere.com/api/gallery/",
       headers: {
         "content-type": "application/json",
         'Authorization': "JWT "+ String(authToken.access),
@@ -119,8 +119,8 @@ const Gallery = () => {
   const imageToDownload = (e, key) => {
     console.log(e.target)
     console.log(gallery[key].image)
-    console.log(`iamrizwan.pythonanywhere.com${gallery[key].image}`,gallery[key].name)
-    handleDownload(`iamrizwan.pythonanywhere.com${gallery[key].image}`,gallery[key].name)
+    console.log(`https://iamrizwan.pythonanywhere.com${gallery[key].image}`,gallery[key].name)
+    handleDownload(`https://iamrizwan.pythonanywhere.com${gallery[key].image}`,gallery[key].name)
     console.log(key)
   }
 
@@ -171,7 +171,7 @@ const Gallery = () => {
 
     await axios({
      method: "delete",
-     url: "iamrizwan.pythonanywhere.com/api/gallery/",
+     url: "https://iamrizwan.pythonanywhere.com/api/gallery/",
      headers: {
        "content-type": "application/json",
        'Authorization': "JWT "+ String(authToken.access),
@@ -198,7 +198,7 @@ const Gallery = () => {
           onMouseOut = {e => handleHoverOut(e,k)}> 
           <div key={k} className="  " onClick={e=>handleModal(e,k)}>
     
-            <img id={`image${k}`} className="w-full transition-1000 transition-opacity rounded-xl sm:h-72 h-56 border-purple-800 " src={`iamrizwan.pythonanywhere.com${image.image}`} /> 
+            <img id={`image${k}`} className="w-full transition-1000 transition-opacity rounded-xl sm:h-72 h-56 border-purple-800 " src={`https://iamrizwan.pythonanywhere.com${image.image}`} /> 
             <div className="truncate  mx-4 my-1 ">{image.name}</div>
             </div>
             <i id={`delete${k}`} className=" fa-solid hidden delay-1000  fa-trash text-lg absolute top-3 right-3   " onClick={e=>handleDelete(e,k)}></i>
