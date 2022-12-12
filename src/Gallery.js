@@ -49,7 +49,7 @@ const Gallery = () => {
     })
   
      // .then((res) => setImages(res.data)
-      .then ((res) => setGallery(res.data)
+      .then ((res) => {setGallery(res.data);console.log(res);}
     )
   //  let images = JSON.parse(response.data)
   //  setGallery(images)
