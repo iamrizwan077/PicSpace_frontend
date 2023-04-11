@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+//Footer Component
 const Footer = () => {
     return (
         <div>
@@ -8,7 +10,6 @@ const Footer = () => {
                     All rights reserved @ Rizwan Riaz
                 </div>
             </footer>
-        
         </div>
     )
 }

@@ -1,0 +1,33 @@
+.uploadcare--widget__button.uploadcare--widget__button_type_open {
+    font-weight: 500;
+    background-color: #e06377;
+    color: #000000;
+}
+
+.uploadcare--widget__button_type_add {
+  background-color: #e06377;
+  color: #000;
+  font-weight: 500;
+}
+
+.uploadcare--widget__button_type_cancel {
+  background-color: #e06377;
+  color: #000;
+  font-weight: 500;
+}
+
+.uploadcare--widget__button_type_choose {
+  background-color: #e06377;
+  color: #000;
+  font-weight: 500;
+}
+.uploadcare--widget__button_type_remove {
+    background-color: #e06377;
+    color: #000;
+    font-weight: 500;
+  }
+.uploadcare--widget__button:hover {
+    background-color: #c83349;
+    font-weight: 500;    color: #000000;
+  }
+  

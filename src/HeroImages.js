@@ -2,24 +2,26 @@ import img1 from "./images/img1.jpg";
 import img2 from "./images/img2.jpg";
 import img3 from "./images/img3.jpg";
 
+
+//Titles, descriptions and images displayed on Hero carousel
 export default [
   {
-    title: "Let your memory be your travel bag",
+    title: "Upload Images Effortlessly",
     desc:
-      "Have you ever smelled a scent that made you remember a person or have you ever passed by a place that made you reminisce an event, capture the moments so you can retrieve it later",
+      "Our platform makes it easy to upload your images and share them with the world. With just a few clicks, you can upload your favorite pictures and showcase your photography skills to your friends and family",
     image: img1
   },
   {
-    title: "Good life, a collection of happy memories",
+    title: "Store and Organize Your Photos",
     desc:
-      "Time doesn't stop, store the precious moments of your life and remember them throughout your life",
+      "Tired of cluttered photo albums on your phone? Our platform lets you store and organize your photos in a central location, so you can access them from anywhere. Plus, with our intuitive tagging system, you can quickly find the photo you're looking for",
     image: img2
   },
   {
-    title: "Store your favorite moments here",
+    title: "Collaborate with Your Team",
 
     desc:
-      "No more worries about losing your favorite moments, sign in and upload your favorite images to view them whenver you need",
+      "Need to collaborate on a project with colleagues or friends? Our image uploading functionality makes it easy to share photos and work together in real-time. Whether you're working on a design project or planning a vacation, our platform has you covered",
     image: img3
   }
 ];

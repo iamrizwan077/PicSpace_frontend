@@ -1,13 +1,19 @@
 import React from "react";
 import featureimg from "./images/featureimg.jpg";
+import './styles.css'
 
+
+//Displaying features on Landing page
 const Features = () => {
+
   return (
     <div className=" bg-[#e06377]  pb-16" id="features">
+
       <div className="text-black text-6xl  py-8 font-semibold flex justify-center">
         Features
       </div>
-      <div className="mx-8  inline-block px-4 flex flex-col md:flex-row justify-between">
+
+      <div className="mx-8  px-4 flex flex-col md:flex-row justify-between">
         <div className=" md:w-1/2 justify-center w-full">
           <div className="wrapper inline-flex md:pt-16  text-white text-5xl font-semibold  ">
             <div className=" ">It's</div>
