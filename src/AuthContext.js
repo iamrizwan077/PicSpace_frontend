@@ -32,6 +32,10 @@ export const AuthProvider = ({ children }) => {
     }).then(response => {
       setAuth(true)
       localStorage.setItem("authToken", response.data.key)
+      const fb_token = localStorage.getItem(`fbist_${facebookAppId}`)
+      if (fb_token !== null){
+        localStorage.removeItem(`fbist_${facebookAppId}`)
+      }
 
       return navigate("/")
     })
@@ -176,6 +180,7 @@ export const AuthProvider = ({ children }) => {
     })
       .then((res) => {
         localStorage.setItem('authToken', res.data.key)
+        localStorage.removeItem(`fbist_${facebookAppId}`)
         if (res.status === 200) {
           navigate('/')
         }
