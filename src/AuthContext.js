@@ -32,11 +32,7 @@ export const AuthProvider = ({ children }) => {
     }).then(response => {
       setAuth(true)
       localStorage.setItem("authToken", response.data.key)
-      const fb_token = localStorage.getItem(`fbist_${facebookAppId}`)
-      if (fb_token !== null){
-        localStorage.removeItem(`fbist_${facebookAppId}`)
-      }
-
+      
       return navigate("/")
     })
       .catch(function (err) {
@@ -72,6 +68,11 @@ export const AuthProvider = ({ children }) => {
     }).then(response => {
       toast(`${response.data.detail}`)
       setAuth(false)
+      const fb_token = localStorage.getItem(`fblst_${facebookAppId}`)
+      if (fb_token !== null){
+        localStorage.removeItem(`fblst_${facebookAppId}`)
+      }
+
       localStorage.removeItem("authToken")
 
       return navigate("/")
@@ -180,7 +181,7 @@ export const AuthProvider = ({ children }) => {
     })
       .then((res) => {
         localStorage.setItem('authToken', res.data.key)
-        localStorage.removeItem(`fbist_${facebookAppId}`)
+        localStorage.removeItem(`fblst_${facebookAppId}`)
         if (res.status === 200) {
           navigate('/')
         }

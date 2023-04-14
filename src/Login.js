@@ -21,7 +21,7 @@ const Login = () => {
       version: 'v12.0'
     });
   }, []);
-  
+
   return (
     <div className="flex py-8 min-h-screen">
       <div className=" flex flex-col bg-white h-fit my-auto shadow-2xl rounded-3xl  border px-2 md:px-12 justify-center mx-auto">

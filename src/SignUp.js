@@ -22,7 +22,7 @@ const SignUp = () => {
       version: 'v12.0'
     });
   }, []);
-  
+
   return (
     <div className="flex py-8 min-h-screen">
       <div className=" flex flex-col bg-white h-fit my-auto shadow-2xl rounded-3xl  border px-2 md:px-12 justify-center mx-auto">
@@ -89,7 +89,6 @@ const SignUp = () => {
           appId={`${facebookAppId}`}
           autoLoad
           callback={res => responseFacebook(res)}
-          onFailure={toast("Login Failed. Something went wrong. Please inform us through email at picspaceapp.mail.pk@gmail.com")}
           cssClass="mb-2 w-full text-gray-800 text-sm mt-3 px-2 py-2 border rounded-full justify-center border-gray-300 flex items-center"
           icon={<i className="fa-brands fa-facebook-f text-blue-600 text-xl mr-4"></i>}
           textButton="Sign Up with Facebook"

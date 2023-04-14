@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="md:flex  bg-[#e06377] items-center justify-between lg:py-1 lg:pl-4">
+      <nav className="md:flex absolute top-0 left-0 right-0 z-10 bg-[#e06377] items-center justify-between lg:py-1 lg:pl-4">
 
         <div className=" font-semibold flex justify-between  py-2.5 px-4 rounded-md text-2xl bg-[#c83349] md:bg-[#e06377] ">
           <Link to="/">
@@ -24,7 +24,7 @@ const Navbar = () => {
         <ul className="flex flex-col transition-1000 rounded-md hidden md:block transition-all" id="menu" >
           <li className="flex font-bold flex-col md:flex-row divide-y divide-gray-600 md:divide-y-0 rounded-md">
             {auth && <>
-              <Link to="/home" className="" onClick={handleMenu}>
+              <Link to="/home" onClick={handleMenu}>
                 <div className="px-6  rounded-md  py-3  hover:bg-[#c83349] ">
                   Home
                 </div>

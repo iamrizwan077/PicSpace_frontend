@@ -35,12 +35,19 @@ const Hero = ({ slides }) => {
               {index === current && (
                 <div className="flex justify-center items-center">
                   <img className="h-screen w-full opacity-70" alt="" src={slide.image} />
+                  <span onClick={prevSlide} className="absolute inset-y-1/2 cursor-pointer items-center px-3 flex left-1 justify-start py-5 m-2 hover:bg-[#e06377] bg-transparent text-xl rounded-full font-bold text-black ">
+                    &lt;
+                  </span>
                   <div className="absolute sm:top-1/3 text-5xl flex text-center mx-40 sm:text-6xl font-semibold sm:font-bold">
                     {slide.title}
                   </div>
                   <div className="absolute  md:top-2/4 mx-28 lg:pt-8 md:pt-16 flex text-center hidden md:block text-lg font-semibold">
                     {slide.desc}
                   </div>
+                  <span onClick={nextSlide}
+                    className="absolute flex cursor-pointer inset-y-1/2 py-5 right-1 items-center justify-end   text-xl font-bold text-black  rounded-full px-3 m-2 hover:bg-[#e06377] bg-transparent">
+                    &gt;
+                  </span>
                 </div>
               )}
             </div>
@@ -55,18 +62,7 @@ const Hero = ({ slides }) => {
           </Link>}
         </div>
       </div>
-      <button
-        onClick={prevSlide}
-        className="absolute top-1/2 left-1 text-xl rounded-full  flex  font-bold text-black justify-start px-3 py-2 m-2 hover:bg-[#e06377] bg-transparent"
-      >
-        &lt;
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 right-1 flex justify-end  text-xl font-bold text-black  rounded-full px-3 py-2 m-2 hover:bg-[#e06377] bg-transparent"
-      >
-        &gt;
-      </button>
+
     </>
   );
 };
