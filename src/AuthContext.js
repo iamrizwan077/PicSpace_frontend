@@ -10,9 +10,10 @@ export default AuthContext
 
 
 export const AuthProvider = ({ children }) => {
-  
+
   let [auth, setAuth] = useState(() => localStorage.getItem("authToken") ? true : false)
   const navigate = useNavigate()
+  const facebookAppId = process.env.REACT_APP_FACEBOOK_APP_ID
 
   //Request for user login
   const loginUser = async (e) => {
@@ -66,7 +67,6 @@ export const AuthProvider = ({ children }) => {
       },
     }).then(response => {
       toast(`${response.data.detail}`)
-      //      setAuthToken(null)
       setAuth(false)
       localStorage.removeItem("authToken")
 
@@ -161,7 +161,7 @@ export const AuthProvider = ({ children }) => {
       });
   };
 
-    //Sending access token to dj-rest-auth for Facebook SignIn
+  //Sending access token to dj-rest-auth for Facebook SignIn
   const responseFacebook = (response) => {
     // Send the response (code or token) to your Django backend to authenticate the user
     axios('http://localhost:8000/dj-rest-auth/facebook/', {
@@ -171,11 +171,14 @@ export const AuthProvider = ({ children }) => {
       },
 
       data: JSON.stringify({
-        access_token: response.authResponse.accessToken,  // for Implicit Grant
+        access_token: response.accessToken,  // for Implicit Grant
       }),
     })
       .then((res) => {
         localStorage.setItem('authToken', res.data.key)
+        if (res.status === 200) {
+          navigate('/')
+        }
         setAuth(true)
       })
       .catch((err) => {
@@ -206,8 +209,8 @@ export const AuthProvider = ({ children }) => {
         'accept': 'application/json'
       },
       data: JSON.stringify(({
-         'email': email, 'password': password 
-        }))
+        'email': email, 'password': password
+      }))
     }).then(response => {
       setAuth(true)
       localStorage.setItem("authToken", response.data.key)
@@ -246,7 +249,8 @@ export const AuthProvider = ({ children }) => {
       data: JSON.stringify(({
         'username': e.target.email.value.substring(0, e.target.email.value.indexOf("@")),
         'email': e.target.email.value,
-        'password1': e.target.password1.value, 'password2': e.target.password2.value
+        'password1': e.target.password1.value,
+        'password2': e.target.password2.value
       }))
     }).then(response => {
       console.log(response)
@@ -293,7 +297,6 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider value={contextData}>
       {children}
     </AuthContext.Provider>
-
-
   )
 }
+

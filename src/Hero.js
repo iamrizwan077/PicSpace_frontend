@@ -50,14 +50,14 @@ const Hero = ({ slides }) => {
         <div className="absolute  top-2/3 flex left-1/3 right-1/3  sm:pt-12 md:pt-26 pt-32  text-center justify-center  text-base font-semibold">
           {auth || <Link to="/accounts/signup">
             <button className=" animate-bounce sm:px-6 px-4  mx-1   rounded-md  py-3  hover:bg-[#c83349] bg-[#e06377]">
-              Sign In
+              Sign Up
             </button>
           </Link>}
         </div>
       </div>
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-1 text-xl rounded-full  absolute top-1/2 flex  font-bold text-black justify-start px-3 py-2 m-2 hover:bg-[#e06377] bg-transparent"
+        className="absolute top-1/2 left-1 text-xl rounded-full  flex  font-bold text-black justify-start px-3 py-2 m-2 hover:bg-[#e06377] bg-transparent"
       >
         &lt;
       </button>

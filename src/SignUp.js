@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "./AuthContext";
-import { FacebookProvider, LoginButton } from "react-facebook";
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import { toast } from "react-toastify";
+import FacebookLogin from "react-facebook-login";
 
 //Sign Up component
 const SignUp = () => {
@@ -14,8 +14,8 @@ const SignUp = () => {
   const facebookAppId = process.env.REACT_APP_FACEBOOK_APP_ID
 
   return (
-    <div className="flex py-8">
-      <div className=" flex flex-col bg-white  shadow-2xl rounded-3xl  border px-2 md:px-12 justify-center mx-auto">
+    <div className="flex py-8 min-h-screen">
+      <div className=" flex flex-col bg-white h-fit my-auto shadow-2xl rounded-3xl  border px-2 md:px-12 justify-center mx-auto">
         <div className="font-semibold text-3xl px-2 py-6 ">Sign Up</div>
 
         {/* Input form */}
@@ -74,22 +74,17 @@ const SignUp = () => {
           />
         </GoogleOAuthProvider>
 
-        {/* Facebook Sign In button */}
-        <FacebookProvider appId={`${facebookAppId}`}>
+        {/* Facebook Sign Up button */}
+        <FacebookLogin
+          appId={`${facebookAppId}`}
+          autoLoad
+          callback={res => responseFacebook(res)}
+          onFailure={toast("Login Failed. Something went wrong. Please inform us through email at picspaceapp.mail.pk@gmail.com")}
+          cssClass="mb-2 w-full text-gray-800 text-sm mt-3 px-2 py-2 border rounded-full justify-center border-gray-300 flex items-center"
+          icon={<i className="fa-brands fa-facebook-f text-blue-600 text-xl mr-4"></i>}
+          textButton="Sign Up with Facebook"
+        />
 
-          <LoginButton
-            className="mb-2 text-gray-800 text-sm mt-3 px-2  py-1.5 border rounded-full justify-center border-gray-300 flex items-center"
-            scope="email"
-            onSuccess={(credentialResponse) => {
-              responseFacebook(credentialResponse)
-            }}
-            onError={() => {
-              toast("Login failed!")
-            }}
-          ><i className="fa-brands fa-facebook-f text-blue-600 text-xl mr-4"></i>
-            Sign Up with Facebook
-          </LoginButton>
-        </FacebookProvider>
 
         <div className="text-xs flex justify-center pb-6">
           <span>Already registered?</span>

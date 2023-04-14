@@ -1,6 +1,6 @@
-import { FacebookProvider, LoginButton } from "react-facebook";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import FacebookLogin from "react-facebook-login";
 import AuthContext from "./AuthContext";
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import { toast } from "react-toastify";
@@ -14,8 +14,8 @@ const Login = () => {
   const facebookAppId = process.env.REACT_APP_FACEBOOK_APP_ID
 
   return (
-    <div className="flex py-8 ">
-      <div className=" flex flex-col bg-white  shadow-2xl rounded-3xl  border px-2 md:px-12 justify-center mx-auto">
+    <div className="flex py-8 min-h-screen">
+      <div className=" flex flex-col bg-white h-fit my-auto shadow-2xl rounded-3xl  border px-2 md:px-12 justify-center mx-auto">
         <div className="font-semibold text-3xl px-2 py-6 ">Sign In</div>
         {/* {error && <div className="text-sm bg-red-300 text-red-700 px-2 py-1 mb-2">{error.detail}</div>} */}
 
@@ -67,21 +67,14 @@ const Login = () => {
         </GoogleOAuthProvider>
 
         {/* Facebook Sign In button */}
-        <FacebookProvider appId={`${facebookAppId}`}>
-          <LoginButton
-            className="mb-2 text-gray-800 text-sm mt-3 px-2  py-1.5 border rounded-full justify-center border-gray-300 flex items-center"
-            scope="email"
-            onSuccess={(credentialResponse) => {
-              responseFacebook(credentialResponse)
-            }}
-            onError={() => {
-              toast("Login failed!")
-            }}
-          >
-            <i className="fa-brands fa-facebook-f text-blue-600 text-xl mr-4"></i>
-            Sign In with Facebook
-          </LoginButton>
-        </FacebookProvider>
+        <FacebookLogin
+          appId={`${facebookAppId}`}
+          autoLoad
+          callback={res => responseFacebook(res)}
+          cssClass="mb-2 w-full text-gray-800 text-sm mt-3 px-2 py-2 border rounded-full justify-center border-gray-300 flex items-center"
+          icon={<i className="fa-brands fa-facebook-f text-blue-600 text-xl mr-4"></i>}
+          textButton="Sign In with Facebook"
+        />
 
 
         <div className="text-xs flex justify-center pb-6">
