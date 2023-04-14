@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "./AuthContext";
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
@@ -8,11 +8,21 @@ import FacebookLogin from "react-facebook-login";
 //Sign Up component
 const SignUp = () => {
 
-  let { signupUser } = useContext(AuthContext)
+  let { signupUser, responseFacebook, responseGoogle } = useContext(AuthContext)
 
   const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID
   const facebookAppId = process.env.REACT_APP_FACEBOOK_APP_ID
 
+
+  useEffect(() => {
+    window.FB.init({
+      appId: `${facebookAppId}`,
+      autoLogAppEvents: true,
+      xfbml: true,
+      version: 'v12.0'
+    });
+  }, []);
+  
   return (
     <div className="flex py-8 min-h-screen">
       <div className=" flex flex-col bg-white h-fit my-auto shadow-2xl rounded-3xl  border px-2 md:px-12 justify-center mx-auto">
@@ -55,7 +65,7 @@ const SignUp = () => {
         </form>
         <div className="or text-base my-4">or</div>
 
-        {/* Google Sign In button */}
+        {/* Google Sign Up button */}
         <GoogleOAuthProvider clientId={`${googleClientId}`}>
           <GoogleLogin className="mb-2 font-semibold mt-3 px-2  py-12 border rounded-full justify-center border-gray-400 flex items-center"
             onSuccess={(credentialResponse) => {

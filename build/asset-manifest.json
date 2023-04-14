@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8ab22be4.css",
+    "main.js": "/static/js/main.518669fd.js",
+    "ucare-widget-chunk.js": "/static/js/ucare-widget-chunk.d82217b9.chunk.js",
+    "ucare-panel-chunk.js": "/static/js/ucare-panel-chunk.26151267.chunk.js",
+    "static/js/294.e6092fb8.chunk.js": "/static/js/294.e6092fb8.chunk.js",
+    "static/media/img1.jpg": "/static/media/img1.293721e858b32f10554f.jpg",
+    "static/media/img2.jpg": "/static/media/img2.b53f2f8a21767311b3d6.jpg",
+    "static/media/img3.jpg": "/static/media/img3.e78589aa7f5d8270d24a.jpg",
+    "static/media/featureimg.jpg": "/static/media/featureimg.a9b0a2ff0fdf092d5d2d.jpg",
+    "index.html": "/index.html",
+    "main.8ab22be4.css.map": "/static/css/main.8ab22be4.css.map",
+    "main.518669fd.js.map": "/static/js/main.518669fd.js.map",
+    "ucare-widget-chunk.d82217b9.chunk.js.map": "/static/js/ucare-widget-chunk.d82217b9.chunk.js.map",
+    "ucare-panel-chunk.26151267.chunk.js.map": "/static/js/ucare-panel-chunk.26151267.chunk.js.map",
+    "294.e6092fb8.chunk.js.map": "/static/js/294.e6092fb8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ab22be4.css",
+    "static/js/main.518669fd.js"
+  ]
+}

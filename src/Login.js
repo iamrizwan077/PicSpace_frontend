@@ -13,6 +13,15 @@ const Login = () => {
   const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID
   const facebookAppId = process.env.REACT_APP_FACEBOOK_APP_ID
 
+  useEffect(() => {
+    window.FB.init({
+      appId: `${facebookAppId}`,
+      autoLogAppEvents: true,
+      xfbml: true,
+      version: 'v12.0'
+    });
+  }, []);
+  
   return (
     <div className="flex py-8 min-h-screen">
       <div className=" flex flex-col bg-white h-fit my-auto shadow-2xl rounded-3xl  border px-2 md:px-12 justify-center mx-auto">
