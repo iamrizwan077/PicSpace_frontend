@@ -12,7 +12,7 @@ const Home = () => {
     setFile(info.cdnUrl);
     await axios({
      method: "post",
-     url: "http://localhost:8000/api/home/",
+     url: "https://iamrizwan066.pythonanywhere.com/api/home/",
      headers: {
        "content-type": "application/json",
        "Authorization": `Token ${localStorage.getItem('authToken')}`
