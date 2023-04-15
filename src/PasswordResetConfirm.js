@@ -18,7 +18,7 @@ const PasswordResetConfirm = () => {
     e.preventDefault();
     axios({
       method: "POST",
-      url: `http://localhost:8000/dj-rest-auth/password/reset/confirm/${uid}/${token}/`,
+      url: `https://iamrizwan066.pythonanywhere.com/dj-rest-auth/password/reset/confirm/${uid}/${token}/`,
       data: {
         'new_password1': newPassword1,
         'new_password2': newPassword2,
