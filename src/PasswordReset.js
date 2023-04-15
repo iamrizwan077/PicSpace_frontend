@@ -15,7 +15,7 @@ const PasswordReset = () => {
     e.preventDefault();
     await axios({
       method: 'POST',
-      url: 'http://localhost:8000/dj-rest-auth/password/reset/',
+      url: 'https://iamrizwan066.pythonanywhere.com/dj-rest-auth/password/reset/',
       headers: {
         "content-type": "application/json",
       },
