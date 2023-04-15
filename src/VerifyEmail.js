@@ -16,7 +16,7 @@ const VerifyEmail = () => {
     e.preventDefault();
     await axios({
       method: 'POST',
-      url: 'http://localhost:8000/dj-rest-auth/registration/resend-email/',
+      url: 'https://iamrizwan066.pythonanywhere.com/dj-rest-auth/registration/resend-email/',
       headers: {
         "content-type": "application/json",
       },
