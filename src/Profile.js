@@ -10,10 +10,11 @@ const Profile = () => {
   let [verifiedEmail, setVerifiedEmail] = useState()
   let [socialProvider, setSocialProvider] = useState()
 
+  //Get info about storage, user signin type and email verification status
   const handleStorage = async () => {
     await axios({
       method: "get",
-      url: "http://localhost:8000/api/profile/",
+      url: "https://iamrizwan066.pythonanywhere.com/api/profile/",
       headers: {
         "content-type": "application/json",
         "Authorization": `Token ${localStorage.getItem('authToken')}`
@@ -25,10 +26,11 @@ const Profile = () => {
     })
   }
 
+  //Get info about user email, username, firstname, lastname
   const handleProfile = async () => {
     await axios({
       method: "get",
-      url: "http://localhost:8000/dj-rest-auth/user/",
+      url: "https://iamrizwan066.pythonanywhere.com/dj-rest-auth/user/",
       headers: {
         "content-type": "application/json",
         "Authorization": `Token ${localStorage.getItem('authToken')}`
