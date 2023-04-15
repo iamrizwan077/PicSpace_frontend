@@ -28,7 +28,7 @@ const PasswordChange = () => {
         //console.log("MAIL", mail)
         await axios({
             method: 'POST',
-            url: 'http://localhost:8000/dj-rest-auth/password/change/',
+            url: 'https://iamrizwan066.pythonanywhere.com/dj-rest-auth/password/change/',
             headers: {
                 "content-type": "application/json",
                 "Authorization": `Token ${localStorage.getItem('authToken')}`
