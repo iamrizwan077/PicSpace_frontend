@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
     e.preventDefault()
     await axios({
       method: "post",
-      url: "http://localhost:8000/dj-rest-auth/login/",
+      url: "https://iamrizwan066.pythonanywhere.com/dj-rest-auth/login/",
       headers: {
         'Content-Type': 'application/json',
         'accept': 'application/json'
@@ -60,7 +60,7 @@ export const AuthProvider = ({ children }) => {
     e.preventDefault()
     await axios({
       method: "post",
-      url: "http://localhost:8000/dj-rest-auth/logout/",
+      url: "https://iamrizwan066.pythonanywhere.com/dj-rest-auth/logout/",
       headers: {
         'Content-Type': 'application/json',
         'accept': 'application/json'
@@ -99,7 +99,7 @@ export const AuthProvider = ({ children }) => {
   //API for retrieving Django Token based on credentials returned from Google
   const responseToken = async (info) => {
     // Send the response (code or token) to your Django backend to authenticate the user
-    await axios('http://localhost:8000/api/get_token', {
+    await axios('https://iamrizwan066.pythonanywhere.com/api/get_token', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -132,7 +132,7 @@ export const AuthProvider = ({ children }) => {
   //Sending access token to dj-rest-auth for Google SignIn
   const responseGoogle = (response) => {
     // Send the response (code or token) to your Django backend to authenticate the user
-    axios('http://localhost:8000/dj-rest-auth/google/', {
+    axios('https://iamrizwan066.pythonanywhere.com/dj-rest-auth/google/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ export const AuthProvider = ({ children }) => {
   //Sending access token to dj-rest-auth for Facebook SignIn
   const responseFacebook = (response) => {
     // Send the response (code or token) to your Django backend to authenticate the user
-    axios('http://localhost:8000/dj-rest-auth/facebook/', {
+    axios('https://iamrizwan066.pythonanywhere.com/dj-rest-auth/facebook/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -209,7 +209,7 @@ export const AuthProvider = ({ children }) => {
     e.preventDefault()
     await axios({
       method: "post",
-      url: "http://localhost:8000/dj-rest-auth/login/",
+      url: "https://iamrizwan066.pythonanywhere.com/dj-rest-auth/login/",
       headers: {
         'Content-Type': 'application/json',
         'accept': 'application/json'
@@ -247,7 +247,7 @@ export const AuthProvider = ({ children }) => {
     console.log("sing FOrm")
     await axios({
       method: "post",
-      url: "http://localhost:8000/dj-rest-auth/registration/",
+      url: "https://iamrizwan066.pythonanywhere.com/dj-rest-auth/registration/",
       headers: {
         'Content-Type': 'application/json',
         'accept': 'application/json'
