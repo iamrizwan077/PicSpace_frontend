@@ -18,7 +18,7 @@ const Gallery = () => {
   const handleGallery = async () => {
     await axios({
       method: "get",
-      url: "http://localhost:8000/api/gallery/",
+      url: "https://iamrizwan066.pythonanywhere.com/api/gallery/",
       headers: {
         "content-type": "application/json",
         "Authorization": `Token ${localStorage.getItem('authToken')}`
@@ -98,7 +98,7 @@ const Gallery = () => {
     //Delete image URL from database
     await axios({
       method: "delete",
-      url: "http://localhost:8000/api/gallery/",
+      url: "https://iamrizwan066.pythonanywhere.com/api/gallery/",
       headers: {
         "content-type": "application/json",
         "Authorization": `Token ${localStorage.getItem('authToken')}`
