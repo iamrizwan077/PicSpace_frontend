@@ -33,7 +33,7 @@ const Hero = ({ slides }) => {
               key={index}
             >
               {index === current && (
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center mt-12">
                   <img className="h-screen w-full opacity-70" alt="" src={slide.image} />
                   <span onClick={prevSlide} className="absolute inset-y-1/2 cursor-pointer items-center px-3 flex left-1 justify-start py-5 m-2 hover:bg-[#e06377] bg-transparent text-xl rounded-full font-bold text-black ">
                     &lt;

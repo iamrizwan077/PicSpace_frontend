@@ -47,8 +47,8 @@ const Profile = () => {
 
 
   return (
-    <div className='min-h-screen p-4'>
-      <p className='text-5xl  pb-8 font-semibold underline'>Profile</p>
+    <div className='min-h-screen p-4 mt-12'>
+      <p className='text-5xl  pb-8 pt-2 font-semibold'><em>Profile</em></p>
       <div className='font-semibold flex flex-col gap-y-1.5 text-2xl'>
         <div>Username: <em>{user.username}</em></div>
         <div>Email: <em>{user.email}</em></div>

@@ -112,7 +112,7 @@ const Gallery = () => {
 
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-12">
       <div className="sm:grid-cols-3 grid gap-2 mx-4 my-4 grid-cols-2  ">
 
         {/* Mapping images along with their name, size and buttons */}
