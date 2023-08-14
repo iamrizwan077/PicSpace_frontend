@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { toast } from 'react-toastify';
 
 
 //Password Reset Component
@@ -23,6 +24,9 @@ const PasswordReset = () => {
         'email': mail
       }
     })
+      .then(res => {
+        toast(res.data.detail)
+      })
       .catch(function (err) {
         if (err.response) {
           // Request made and server responded

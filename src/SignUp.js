@@ -77,7 +77,7 @@ const SignUp = () => {
             theme="outline"
             size="large"
             shape="pill"
-            width="280"
+            width="280px"
             logo_alignment="center"
             type="standard"
             text="signup_with"
@@ -89,13 +89,13 @@ const SignUp = () => {
           appId={`${facebookAppId}`}
           autoLoad
           callback={res => responseFacebook(res)}
-          cssClass="mb-2 w-full text-gray-800 text-sm mt-3 px-2 py-2 border rounded-full justify-center border-gray-300 flex items-center"
+          cssClass="mb-2 w-full text-gray-800 text-sm mt-3 px-2 py-1 border rounded-full justify-center border-gray-300 flex items-center"
           icon={<i className="fa-brands fa-facebook-f text-blue-600 text-xl mr-4"></i>}
           textButton="Sign Up with Facebook"
         />
 
 
-        <div className="text-xs flex justify-center pb-6">
+        <div className="text-xs flex justify-center pb-6 pt-3">
           <span>Already registered?</span>
           <Link className="text-blue-700 pl-2" to="/accounts/login">
             Login Now
